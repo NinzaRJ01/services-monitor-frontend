@@ -1,0 +1,46 @@
+<div class="login-container">
+  <div class="login-box">
+    <h1>Services Monitor</h1>
+    <p class="subtitle">Monitor your services status</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          formControlName="email"
+          [class.error]="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+          placeholder="Enter your email">
+        <span class="error-message" *ngIf="getErrorMessage('email')">
+          {{ getErrorMessage('email') }}
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-input">
+          <input 
+            [type]="showPassword ? 'text' : 'password'"
+            id="password" 
+            formControlName="password"
+            [class.error]="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+            placeholder="Enter your password">
+          <button 
+            type="button" 
+            class="toggle-password" 
+            (click)="togglePassword()">
+            {{ showPassword ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+        <span class="error-message" *ngIf="getErrorMessage('password')">
+          {{ getErrorMessage('password') }}
+        </span>
+      </div>
+
+      <button type="submit" class="submit-button" [disabled]="loginForm.invalid">
+        Sign In
+      </button>
+    </form>
+  </div>
+</div>
