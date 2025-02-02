@@ -46,6 +46,12 @@ Manages the sidebar navigation, providing additional links or options for users.
 ### Team Management
 Handles the management of user teams, including creating and managing team members. This component allows users to organize and manage teams, assign roles, and track team performance.
 
+## Screenshots
+
+### Application Screenshot
+![Application Screenshot](public/Screenshot_20250202_194129.png)
+
+
 ## Instructions to Run
 1. Clone the repository:
    ```bash
