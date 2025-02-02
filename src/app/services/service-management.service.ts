@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface ServiceConfig {
   image?: string;
@@ -28,7 +29,7 @@ export interface ServiceConfig {
   providedIn: 'root'
 })
 export class ServiceManagementService {
-  private apiUrl = 'http://localhost:3000/api/services';
+  private apiUrl = environment.apiUrl+"/services"; // Use the API URL from environment.ts
 
   constructor(private http: HttpClient) {}
 

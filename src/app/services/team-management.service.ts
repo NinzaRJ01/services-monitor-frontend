@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 export interface TeamMember {
   id: string;
@@ -21,7 +22,7 @@ export interface InviteTeamMemberRequest {
   providedIn: 'root'
 })
 export class TeamManagementService {
-  private apiUrl = 'http://localhost:3000/api/team';
+  private apiUrl = environment.apiUrl+"/team"; // Use the API URL from environment.ts
 
   constructor(private http: HttpClient) {}
 
